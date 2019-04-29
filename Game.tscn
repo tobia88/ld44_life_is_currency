@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://UI/RootUI.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Hole.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerControlBall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://EnergySpawner.gd" type="Script" id=6]
+[ext_resource path="res://images/player_ball_3.png" type="Texture" id=7]
+[ext_resource path="res://images/player_ball_1.png" type="Texture" id=8]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -95,3 +97,11 @@ SPACING = 88.059
 MAX_LENGTH = 5
 
 [node name="EnergyGroup" type="Node" parent="."]
+
+[node name="player_ball_3" type="Sprite" parent="."]
+position = Vector2( -396.271, -92.4595 )
+texture = ExtResource( 7 )
+
+[node name="player_ball_1" type="Sprite" parent="."]
+position = Vector2( -373.855, -92.5649 )
+texture = ExtResource( 8 )
