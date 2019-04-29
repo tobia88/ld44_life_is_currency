@@ -1,0 +1,104 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BaseController",
+"language": "GDScript",
+"path": "res://players/BaseController.gd"
+}, {
+"base": "RigidBody2D",
+"class": "BaseEnergy",
+"language": "GDScript",
+"path": "res://players/energy/BaseEnergy.gd"
+}, {
+"base": "Node2D",
+"class": "EnergySpawner",
+"language": "GDScript",
+"path": "res://EnergySpawner.gd"
+}, {
+"base": "Area2D",
+"class": "Hole",
+"language": "GDScript",
+"path": "res://Hole.gd"
+}, {
+"base": "RigidBody2D",
+"class": "PlayerBall",
+"language": "GDScript",
+"path": "res://players/PlayerBall.gd"
+} ]
+_global_script_class_icons={
+"BaseController": "",
+"BaseEnergy": "",
+"EnergySpawner": "",
+"Hole": "",
+"PlayerBall": ""
+}
+
+[application]
+
+config/name="LD44-Life is Currency"
+run/main_scene="res://Game.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+DataMng="*res://DataMng.gd"
+
+[display]
+
+window/size/width=1050
+window/size/height=700
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "aseprite_importer" )
+
+[input]
+
+shoot={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+2d/default_gravity=0
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

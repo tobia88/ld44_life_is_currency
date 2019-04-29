@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://players/BaseBall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://players/energy/BaseEnergy.gd" type="Script" id=2]
+[ext_resource path="res://images/energy_ball.png" type="Texture" id=3]
+
+[node name="BaseBall" groups=[
+"energy_ball",
+] instance=ExtResource( 1 )]
+contacts_reported = 0
+contact_monitor = false
+script = ExtResource( 2 )
+
+[node name="BodyPivot" parent="." index="0"]
+editor/display_folded = false
+
+[node name="player_ball" parent="BodyPivot" index="0"]
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_BaseBall_body_entered"]

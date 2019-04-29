@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://UI/RootUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Players/PlayerControlBall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://EnergySpawner.gd" type="Script" id=6]
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RootUI" parent="CanvasLayer" instance=ExtResource( 2 )]
+rect_pivot_offset = Vector2( 110, 30 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2.5, 2.5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 504.176, -50.005 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -720, -50.005 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -720, -50.005 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -8.25977, -350 )
+rotation = -1.5708
+scale = Vector2( 1, 3.44 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2.61909, 550 )
+rotation = -1.5708
+scale = Vector2( 1, 3.44 )
+
+[node name="Hole" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -290 )
+
+[node name="StartPointGroup" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="PlayerA" type="Position2D" parent="StartPointGroup"]
+position = Vector2( -414.914, -212.218 )
+
+[node name="PlayerB" type="Position2D" parent="StartPointGroup"]
+position = Vector2( 391.788, -208.137 )
+
+[node name="PlayerC" type="Position2D" parent="StartPointGroup"]
+position = Vector2( -418.995, 214.939 )
+
+[node name="PlayerBall" parent="." instance=ExtResource( 5 )]
+position = Vector2( -380, -10 )
+contacts_reported = 0
+contact_monitor = false
+
+[node name="EnergySpawnerGroup" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="EnergySpawner" type="Node2D" parent="EnergySpawnerGroup"]
+position = Vector2( 2.61909, 0 )
+script = ExtResource( 6 )
+SPACING = 88.059
+MAX_LENGTH = 7
+
+[node name="EnergySpawner2" type="Node2D" parent="EnergySpawnerGroup"]
+position = Vector2( 0, -80 )
+script = ExtResource( 6 )
+SPACING = 88.059
+MAX_LENGTH = 6
+
+[node name="EnergySpawner3" type="Node2D" parent="EnergySpawnerGroup"]
+position = Vector2( 0, 80 )
+script = ExtResource( 6 )
+SPACING = 88.059
+MAX_LENGTH = 6
+
+[node name="EnergySpawner4" type="Node2D" parent="EnergySpawnerGroup"]
+position = Vector2( 0, -160 )
+script = ExtResource( 6 )
+SPACING = 88.059
+MAX_LENGTH = 5
+
+[node name="EnergySpawner5" type="Node2D" parent="EnergySpawnerGroup"]
+position = Vector2( 0, 160 )
+script = ExtResource( 6 )
+SPACING = 88.059
+MAX_LENGTH = 5
+
+[node name="EnergyGroup" type="Node" parent="."]
